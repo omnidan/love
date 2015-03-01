@@ -1,0 +1,68 @@
+#heart {
+  color: #FFFFFF;
+  font-size: 1em;
+  transition: .5s;
+  max-width: 500px;
+}
+
+#heart:hover {
+  color: #D2D2D2;
+  transition: .5s;
+  cursor: pointer;
+}
+
+#heart.active {
+  color: red;
+  transition: .5s;
+}
+
+#heart.active:hover {
+  color: red;
+  transition: .5s;
+}
+
+#heart.error {
+  color: black;
+  transition: .5s;
+}
+
+#heart.error:hover {
+  color: black;
+  transition: .5s;
+}
+
+#heart-text {
+  width: 100%;
+  border: 2px solid #FFFFFF;
+  border-radius: 5px;
+  background: none;
+  color: #FFFFFF;
+  font-family: "Roboto", "Arial", sans-serif;
+  padding: 10px 0;
+  font-size: 1.5em;
+  margin-left: -1px;
+  margin-top: 20px;
+  text-align: center;
+  text-indent: 0.5em;
+  transition: .5s;
+  max-width: 500px;
+  line-height: normal;
+}
+
+#heart-text.active {
+  color: red;
+  border: 2px solid red;
+  transition: .5s;
+}
+
+#heart-text:focus {
+  outline: none;
+  border: 2px solid #D2D2D2;
+  transition: .5s;
+}
+
+#heart-text.error {
+  color: black;
+  border: 2px solid black;
+  transition: .5s;
+}

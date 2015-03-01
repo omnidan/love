@@ -1,0 +1,3 @@
+platforms/
+plugins/
+# Please don't forget to install com.phonegap.plugins.PushPlugin

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="net.omnidan.love" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    xmlns:gap       = "http://phonegap.com/ns/1.0"
+    xmlns:android   = "http://schemas.android.com/apk/res/android">
+    <name>&lt;3</name>
+    <description>
+        Dan loves Des
+    </description>
+    <author email="daniel.bugl@gmail.com" href="http://omnidan.net">
+        Daniel Bugl
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <gap:config-file platform="android" parent="/manifest" overwrite="true">
+        <application android:theme="@style/AppTheme"></application>
+        <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
+    </gap:config-file>
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-targetSdkVersion" value="21" />
+</widget>

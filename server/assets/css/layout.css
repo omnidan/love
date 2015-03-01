@@ -1,0 +1,30 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #7B1FA2;
+  color: #FFFFFF;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+.container {
+  display: table;
+  height: 100%;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto;
+  text-align: center;
+}

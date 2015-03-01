@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+{% endblock %}
+
+{% block content %}
+<div id="heart" class="heart">
+  <i class="fa fa-heart"></i>
+</div>
+<input id="heart-text" type="text" />
+{% endblock %}
+
+{% block javascript %}
+<script>
+var id;
+$(window).resize(function() {
+  clearTimeout(id);
+  id = setTimeout(doneResizing, 100);
+});
+$(document).ready(function() {
+  doneResizing();
+});
+
+function doneResizing() {
+  $('#heart i').css('font-size', '1em');
+  while( $('#heart i').width() < $('#heart').width() ) {
+    var fs = parseInt($('#heart i').css('font-size'));
+    $('#heart i').css('font-size', (fs + 1) + "px" );
+    if (fs >= 500) {
+      break;
+    }
+  }
+}
+  
+var h = $('#heart');
+var ht = $('#heart-text');
+
+h.click(function() {
+  $.post('/send', {msg: ht.val()}, function(res) {
+    var success = false;
+    try {
+      var r = JSON.parse(res);
+      if (r.success) success = true;
+    } catch (err) { }
+    
+    if (success) {
+      if (ht.val() == "") {
+        ht.val("<");
+
+        // typing effect
+        setTimeout(function() {
+          ht.val("<3");
+        }, 100);
+      }
+      h.addClass('active');
+      ht.addClass('active');
+      setTimeout(function() {
+        h.removeClass('active');
+        ht.removeClass('active');
+        setTimeout(function() {
+            ht.val("");
+        }, 250);
+      }, 250);
+    } else {
+      h.addClass('error');
+      ht.addClass('error');
+      ht.val("ERROR");
+    }
+  });
+});
+</script>
+{% endblock %}
