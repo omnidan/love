@@ -1,3 +1,5 @@
+var s = window.localStorage;
+
 function successHandler (result) {
     console.log('PUSH RESULT:' + result);
 }
@@ -36,8 +38,10 @@ function onNotification(e) {
                 console.log('--BACKGROUND NOTIFICATION--');
             }
         }
+        
+        addItem(e.payload.message);
 
-       console.log('MESSAGE -> MSG: ' + e.payload.message);
+        console.log('MESSAGE -> MSG: ' + e.payload.message);
     break;
 
     case 'error':
@@ -48,6 +52,38 @@ function onNotification(e) {
         console.log('EVENT -> Unknown, an event was received and we do not know what it is</li>');
     break;
   }
+}
+
+function getHistory() {
+  var history_raw = s.getItem("history");
+  
+  try {
+    var history = JSON.parse(history_raw);
+  } catch (err) {
+    return [];
+  }
+  
+  if (history instanceof Array) return history;
+  if (typeof history === "string") return [history];
+  else return [];
+}
+
+function flushHistory(history) {
+  return s.setItem("history", JSON.stringify(history));
+}
+
+function addItem(msg) {
+  var history = getHistory();
+  history.unshift({msg: msg});
+  document.querySelector('history-list').data = history;
+  flushHistory(history);
+}
+
+function delItem(i) {
+  var history = getHistory();
+  history.splice(i, 1);
+  document.querySelector('history-list').data = history;
+  flushHistory(history);
 }
 
 var app = {

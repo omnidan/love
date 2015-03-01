@@ -1,0 +1,24 @@
+{
+  "name": "love",
+  "version": "0.1.0",
+  "homepage": "https://github.com/omnidan/love",
+  "authors": [
+    "Daniel Bugl <daniel.bugl@touchlay.com>"
+  ],
+  "description": "spread love",
+  "main": "index.html",
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "core-toolbar": "Polymer/core-toolbar#~0.5.5",
+    "paper-elements": "Polymer/paper-elements#~0.5.5",
+    "core-list": "Polymer/core-list#~0.5.5"
+  }
+}
