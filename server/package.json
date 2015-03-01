@@ -4,6 +4,7 @@
   "description": "love server",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Bugl <daniel.bugl@touchlay.com> (https://omnidan.github.io/)",
