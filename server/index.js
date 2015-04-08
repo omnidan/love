@@ -13,6 +13,8 @@ function sendMsg(text, cb) {
         timestamp: Date.now()
       }
   });
+  
+  console.log(timestamp, "<3", text); 
 
   // Set up the sender with you API key
   var sender = new gcm.Sender(config.apiKey);
