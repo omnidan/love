@@ -1,17 +1,3 @@
-# Please don't forget to install com.phonegap.plugins.PushPlugin
+platforms/
 plugins/
-
-*.apk
-
-platforms/*
-!platforms/android
-platforms/android/*
-!platforms/android/project.properties
-!platforms/android/CordovaLib
-platforms/android/CordovaLib/*
-!platforms/android/CordovaLib/project.properties
-!platforms/android/res
-platforms/android/res/*
-!platforms/android/res/values
-platforms/android/res/values/*
-!platforms/android/res/values/styles.xml
+love.apk
